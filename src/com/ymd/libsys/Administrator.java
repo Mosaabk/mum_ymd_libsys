@@ -42,11 +42,7 @@ public class Administrator {
 	}
 	
 	public static void main(String[] args) {
-      Member member = new Member();
-      member.setFirstName("Tom");
-      member.setLastName("Bush");
-      member.setPhoneNum("13912345678");
-      Administrator.addLibraryMember(member);
+      
       
   }
 
