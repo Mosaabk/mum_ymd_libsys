@@ -4,10 +4,18 @@ public abstract class Person {
 
 	private String firstName;
 	
-	private String LastName;
+	private String lastName;
 	
 	private String phoneNum;
-
+	
+	private Address address;
+	
+	public Person(String firstName, String lastName, String phoneNum, Address address) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNum = phoneNum;
+		this.address = address;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -16,13 +24,6 @@ public abstract class Person {
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
-		return LastName;
-	}
-
-	public void setLastName(String lastName) {
-		LastName = lastName;
-	}
 
 	public String getPhoneNum() {
 		return phoneNum;
@@ -30,6 +31,18 @@ public abstract class Person {
 
 	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
 }

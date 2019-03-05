@@ -34,7 +34,7 @@ public class LoginController {
 
         System.out.println(s1 + " " + s2);
 
-        SystemUser su = new SystemUser();
+        SystemUser su = new SystemUser(s1, s2);
         int loginRes = su.login(s1, s2);
 
 //        alert.setTitle("Login ... Test!");

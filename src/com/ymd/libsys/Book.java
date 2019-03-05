@@ -1,15 +1,25 @@
 package com.ymd.libsys;
 
+import java.util.List;
+
 public class Book {
-	String ISBN;
-	String title;
-	Periodical chcekoutPeriod;
+	private String ISBN;
+	private String title;
+	private int borrowLimit;
 	
-	public Boolean checkAvailabiltiy()
-	{
-		Boolean result = true;
-		
-		return result;
+	private List<Author> authors;
+	
+	
+	public Book(String ISBN, String title, int borrowLimit) {
+		this.ISBN = ISBN;
+		this.title = title;
+		this.borrowLimit = borrowLimit;
 	}
+	
+	public void setAuthors(List<Author> authors) {
+		this.authors = authors;
+	}
+	
+	
 	
 }
