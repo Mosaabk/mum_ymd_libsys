@@ -12,7 +12,7 @@ import java.io.ObjectOutputStream;
 public class JavaObjectInputOutputStreamExample {
 
 	public static final String OUTPUT_DIR = System.getProperty("user.dir") 
-			+ "//src//com//ymd//libsys//dataaccess//storage//users.txt\n" + 
+			+ "//src//com//ymd//libsys//dataaccess//storage//users.json" + 
 			"";
 	public static void main(String[] args) {
 		
