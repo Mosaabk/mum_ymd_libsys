@@ -3,11 +3,11 @@ package com.ymd.libsys.controller;
 import com.ymd.libsys.SystemUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+//import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
+//import javafx.scene.control.Alert.AlertType;
 
 
 
@@ -24,7 +24,7 @@ public class LoginController {
 
 
     public void submit(ActionEvent ae) {
-        Alert alert = new Alert(AlertType.INFORMATION);
+//        Alert alert = new Alert(AlertType.INFORMATION);
 
         String s1, s2;
 
@@ -37,7 +37,7 @@ public class LoginController {
         SystemUser su = new SystemUser();
         int loginRes = su.login(s1, s2);
 
-        alert.setTitle("Login ... Test!");
+//        alert.setTitle("Login ... Test!");
 
         switch (loginRes){
             case 0:
