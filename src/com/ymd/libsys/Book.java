@@ -1,15 +1,16 @@
 package com.ymd.libsys;
 
 public class Book {
-	String ISBN;
-	String title;
-	Periodical chcekoutPeriod;
+	private String ISBN;
+	private String title;
+	private int borrowLimit;
 	
-	public Boolean checkAvailabiltiy()
-	{
-		Boolean result = true;
-		
-		return result;
+	
+	public Book(String ISBN, String title, int borrowLimit) {
+		this.ISBN = ISBN;
+		this.title = title;
+		this.borrowLimit = borrowLimit;
 	}
+	
 	
 }

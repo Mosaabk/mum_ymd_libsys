@@ -10,11 +10,16 @@ public class SystemUser {
 	
 	private Role role;
 	
-	SystemUser(String userName, String password,Role role){
-		this.userName = userName;
-		this.password = password;
+	 SystemUser(String userName, String password,Role role){
+		this(userName, password);
 		this.role = role;
 	}
+	
+	public SystemUser(String userName, String Password){
+		this.userName = userName;
+		this.password = password;
+	}
+	
 	
 	public String getUserName() {
 		return userName;
