@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <AnchorPane prefHeight="626.0" prefWidth="621.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-  fx:controller="MainMenuController"
-  stylesheets="@main.css">
+  fx:controller="MainMenuController">
    <children>
       <BorderPane prefHeight="626.0" prefWidth="625.0" />
       <Button fx:id="btnAddCopy" layoutX="210.0" layoutY="360.0" mnemonicParsing="false" onAction="#addCopy" prefHeight="80.0" prefWidth="190.0" text="Add A Copy" />
@@ -15,4 +14,5 @@
       <Button fx:id="checkoutBook" layoutX="210.0" layoutY="450.0" minHeight="80.0" mnemonicParsing="false" onAction="#checkoutBook" prefWidth="190.0" text="Checkout A Book" />
       <Button fx:id="btnEditMem" layoutX="210.0" layoutY="181.0" minHeight="80.0" mnemonicParsing="false" onAction="#editMember" prefWidth="190.0" text="Edit An Exsisting Member" />
    </children>
+   
 </AnchorPane>

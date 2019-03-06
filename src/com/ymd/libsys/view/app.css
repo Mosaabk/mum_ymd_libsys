@@ -2,9 +2,12 @@
     -fx-font-size: 14px;
     -fx-font-family: sans-serif;
     -fx-background-color: #ffffff;
-    -fx-background-image: url("lib.jpg");
     -fx-base: rgba(60, 63, 65, 255); 
-    
+}
+
+#loginAnchor{
+	    -fx-background-image: url("lib.jpg");
+	
 }
 
 .btnLabel{
