@@ -15,7 +15,7 @@ public class SystemUser {
 		this.role = role;
 	}
 	
-	public SystemUser(String userName, String Password){
+	public SystemUser(String userName, String password){
 		this.userName = userName;
 		this.password = password;
 	}

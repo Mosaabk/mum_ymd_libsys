@@ -1,9 +1,5 @@
 package com.ymd.libsys.controller;
 
-import java.util.List;
-
-import com.ymd.libsys.Member;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
