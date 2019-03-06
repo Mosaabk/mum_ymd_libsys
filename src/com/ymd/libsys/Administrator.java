@@ -4,11 +4,25 @@ import com.alibaba.fastjson.JSON;
 
 public class Administrator {
 	
-	public static void addNewBook() {
-		
+	public static void addNewBook(Book book) {
+		String booksPath = "src/com/ymd/libsys/books";
+		String res = MyTool.readStringFromFile(booksPath);
+		if (res.equals("")) {
+			Books books = new Books();
+			books.getBooks().add(book);
+			String bookString = JSON.toJSONString(books);
+			MyTool.WriteStringToFile(bookString, booksPath);
+		} else {
+			String jsonDataString = MyTool.readStringFromFile(booksPath);
+			Books books = JSON.parseObject(jsonDataString, Books.class);
+			
+			books.getBooks().add(book);
+			String bookString = JSON.toJSONString(books);
+			MyTool.WriteStringToFile(bookString, booksPath);
+		}
 	}
 	
-	public static void addCopyBook() {
+	public static void addCopyBook(BookCopy bookCopy) {
 		
 	}
 	
@@ -37,8 +51,13 @@ public class Administrator {
 		
 	}
 	
-	public static void EditLibraryMember() {
-		
+	public static void EditLibraryMember(Member member) {
+		String membersPath = "src/com/ymd/libsys/members";
+		String jsonDataString = MyTool.readStringFromFile(membersPath);
+		Members members = JSON.parseObject(jsonDataString, Members.class);
+		members.getMembers().set(member.getId(), member);
+		String memberString = JSON.toJSONString(members);
+		MyTool.WriteStringToFile(memberString, membersPath);
 	}
 	
 	public static void main(String[] args) {
