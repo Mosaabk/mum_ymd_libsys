@@ -24,7 +24,7 @@
         <Label text="State" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
         <TextField fx:id="state" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
         <Label text="Street" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-        <TextField fx:id="txtStreet" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <TextField fx:id="street" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
         <Label text="Zip" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
         <TextField fx:id="zip" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
         <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="8">

@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import com.ymd.libsys.SystemUser;
 
 
 
@@ -35,24 +36,10 @@ public class LoginController {
         System.out.println(s1 + " " + s2);
 
         SystemUser su = new SystemUser(s1, s2);
-        int loginRes = su.login(s1, s2);
 
         alert.setTitle("Login ... Test!");
-
-        switch (loginRes){
-            case 0:
-                System.out.println("fail");
-                break;
-            case 1:
-                System.out.println("System User");
-                break;
-            case 2:
-                System.out.println("Admin");
-            case 3:
-                System.out.println("Librarian");
-                break;
-
-        }
+        
+        System.out.println(su.getRole());
 
 
 
