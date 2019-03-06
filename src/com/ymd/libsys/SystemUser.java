@@ -39,7 +39,7 @@ public class SystemUser {
 		this.userName = userName;
 		this.password = password;
 		
-		return 0;
+		return 1;
 	}
 
 }
