@@ -13,8 +13,7 @@ public class Administrator {
 			String bookString = JSON.toJSONString(books);
 			MyTool.WriteStringToFile(bookString, booksPath);
 		} else {
-			String jsonDataString = MyTool.readStringFromFile(booksPath);
-			Books books = JSON.parseObject(jsonDataString, Books.class);
+			Books books = JSON.parseObject(res, Books.class);
 			books.getBooks().add(book);
 			String bookString = JSON.toJSONString(books);
 			MyTool.WriteStringToFile(bookString, booksPath);
@@ -30,8 +29,7 @@ public class Administrator {
 			String bookCopiesString = JSON.toJSONString(bookCopies);
 			MyTool.WriteStringToFile(bookCopiesString, bookCopiesPath);
 		} else {
-			String jsonDataString = MyTool.readStringFromFile(bookCopiesPath);
-			BookCopies bookCopies = JSON.parseObject(jsonDataString, BookCopies.class);
+			BookCopies bookCopies = JSON.parseObject(res, BookCopies.class);
 			bookCopies.getBookCopies().add(bookCopy);
 			String bookCopiesString = JSON.toJSONString(bookCopies);
 			MyTool.WriteStringToFile(bookCopiesString, bookCopiesPath);
@@ -48,8 +46,7 @@ public class Administrator {
 			String memberString = JSON.toJSONString(members);
 			MyTool.WriteStringToFile(memberString, membersPath);
 		} else {
-			String jsonDataString = MyTool.readStringFromFile(membersPath);
-			Members members = JSON.parseObject(jsonDataString, Members.class);
+			Members members = JSON.parseObject(res, Members.class);
 			
 			int len = members.getMembers().size();
 			int lastId = members.getMembers().get(len - 1).getId();
