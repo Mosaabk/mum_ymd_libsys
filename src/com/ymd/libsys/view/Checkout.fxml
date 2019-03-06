@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
- fx:controller="com.ymd.libsys.controller.CheckoutController">
+ fx:controller="com.ymd.libsys.controller.CheckoutController"
+ stylesheets="@main.css">
   <!-- TODO Add Nodes -->
   <children>
     <GridPane layoutX="-7.0" layoutY="24.0" prefHeight="391.0" prefWidth="540.0">
@@ -38,5 +39,4 @@
       </rowConstraints>
     </GridPane>
   </children>
- 
 </AnchorPane>
