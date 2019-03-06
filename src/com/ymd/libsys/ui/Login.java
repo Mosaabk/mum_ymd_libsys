@@ -15,11 +15,10 @@ public class Login extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/com/ymd/libsys/view/login.fxml"));
-        System.out.println(root);
-        Scene scene = new Scene(root, 400, 400);
+        Scene scene = new Scene(root, 500, 500);
         scene.getStylesheets().add(getClass().getResource("/com/ymd/libsys/view/app.css").toExternalForm());
-      
-
+        
+        
         primaryStage.setTitle("Login Page");
         primaryStage.setScene(scene);
         primaryStage.show();
