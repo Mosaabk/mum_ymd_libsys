@@ -20,5 +20,13 @@ public class CheckoutRecord {
 	}
 	
 	
+	public Member getMember() {
+		return this.member;
+	}
+	
+	public void setMember(Member member) {
+		this.member = member;
+	}
+	
 	
 }
