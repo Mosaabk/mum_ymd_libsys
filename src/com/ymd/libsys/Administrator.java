@@ -15,7 +15,6 @@ public class Administrator {
 		} else {
 			String jsonDataString = MyTool.readStringFromFile(booksPath);
 			Books books = JSON.parseObject(jsonDataString, Books.class);
-			
 			books.getBooks().add(book);
 			String bookString = JSON.toJSONString(books);
 			MyTool.WriteStringToFile(bookString, booksPath);
@@ -23,7 +22,20 @@ public class Administrator {
 	}
 	
 	public static void addCopyBook(BookCopy bookCopy) {
-		
+		String bookCopiesPath = "src/com/ymd/libsys/bookCopies";
+		String res = MyTool.readStringFromFile(bookCopiesPath);
+		if (res.equals("")) {
+			BookCopies bookCopies = new BookCopies();
+			bookCopies.getBookCopies().add(bookCopy);
+			String bookCopiesString = JSON.toJSONString(bookCopies);
+			MyTool.WriteStringToFile(bookCopiesString, bookCopiesPath);
+		} else {
+			String jsonDataString = MyTool.readStringFromFile(bookCopiesPath);
+			BookCopies bookCopies = JSON.parseObject(jsonDataString, BookCopies.class);
+			bookCopies.getBookCopies().add(bookCopy);
+			String bookCopiesString = JSON.toJSONString(bookCopies);
+			MyTool.WriteStringToFile(bookCopiesString, bookCopiesPath);
+		}
 	}
 	
 	public static void addLibraryMember(Member member) {
