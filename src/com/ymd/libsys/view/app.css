@@ -1,4 +1,11 @@
+.root {
+    -fx-font-size: 14px;
+    -fx-font-family: sans-serif;
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("lib.jpg");
+}
 
-#test{
-	-fx-background-color: green;
+.btnLabel{
+	    -fx-font-weight: 700;
+	    -fx-color: red;
 }

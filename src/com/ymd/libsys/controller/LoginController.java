@@ -3,20 +3,29 @@ package com.ymd.libsys.controller;
 import com.ymd.libsys.SystemUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+<<<<<<< HEAD
+import javafx.scene.control.Alert;
+=======
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 
+>>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+<<<<<<< HEAD
+import javafx.scene.control.Alert.AlertType;
+import com.ymd.libsys.SystemUser;
+=======
 
 import javafx.stage.Stage;
 
 //import javafx.scene.control.Alert.AlertType;
 //import com.ymd.libsys.SystemUser;
+>>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
 
 //import javafx.scene.control.Alert.AlertType;
 
@@ -31,15 +40,20 @@ public class LoginController {
     @FXML
     private Button btn;
 
-
+    @FXML
+    private void initialize() 
+    {
+        btn.setVisible(true);
+    }
     public void submit(ActionEvent ae) {
-//        Alert alert = new Alert(AlertType.INFORMATION);
+        Alert alert = new Alert(AlertType.INFORMATION);
 
         String s1, s2;
 
         s1 = tf.getText();
 
         s2 = pf.getText();
+        
 
         System.out.println(s1 + " " + s2);
 
@@ -48,10 +62,17 @@ public class LoginController {
         loginRes = 3;
 
 
+<<<<<<< HEAD
+        alert.setTitle("Login ... Test!");
+=======
         //alert.setTitle("Login ... Test!");
         int screen = -1;
+>>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
         
         System.out.println(su.getRole());
+<<<<<<< HEAD
+
+=======
         switch (loginRes){
             case 0:
                 System.out.println("fail");
@@ -72,10 +93,19 @@ public class LoginController {
                 System.out.println("Super User");
                 screen = 3;
                 break;
+>>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
 
+<<<<<<< HEAD
+       /**
+        * here you are going to check what the role of the user is 
+        * and then navigate to the screen accordingly
+        *
+        */
+=======
         }
 
         openScreen(screen);
+>>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
 
         ((ae.getSource())).getScene().getWindow().hide();
 
