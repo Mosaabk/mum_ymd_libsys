@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSON;
 public class SuperUser {
 	
 	public static void addUser(User user) {
-		String usersPath = "src/com/ymd/libsys/users";
+		String usersPath = "src/com/ymd/libsys/dataaccess/users";
 		String res = MyTool.readStringFromFile(usersPath);
 		if (res.equals("")) {
 			Users users = new Users();
