@@ -13,7 +13,7 @@
 <AnchorPane prefHeight="470.999977929685" stylesheets="@main.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.ymd.libsys.controller.MemberController">
   <!-- TODO Add Nodes -->
   <children>
-    <GridPane hgap="20.0" layoutX="14.0" layoutY="0.0" prefHeight="393.0" prefWidth="459.0">
+    <GridPane hgap="20.0" layoutX="14.0" prefHeight="393.0" prefWidth="459.0">
       <children>
         <Label text="Enter a member Id below:" GridPane.columnIndex="2" />
         <TextField fx:id="memberId" onAction="#getMember" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
@@ -31,20 +31,26 @@
         <TextField fx:id="street" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
         <Label text="Zip" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
         <TextField fx:id="zip" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-        <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
-          <children>
-            <Button fx:id="addBtn" minWidth="100.0" mnemonicParsing="false" onAction="#addMember" prefHeight="27.0" prefWidth="100.0" text="Add" textOverrun="ELLIPSIS" />
-            <Button fx:id="editBtn" minWidth="100.0" mnemonicParsing="false" onAction="#editMember" prefHeight="27.0" prefWidth="100.0" text="Update" visible="true" />
-            <Button minWidth="100.0" mnemonicParsing="false" onAction="#close" prefHeight="27.0" prefWidth="100.0" text="Cancel">
-              <HBox.margin>
-                <Insets />
-              </HBox.margin>
-            </Button>
-          </children>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
           <padding>
             <Insets left="105.0" top="10.0" />
           </padding>
         </HBox>
+            <GridPane GridPane.columnIndex="2" GridPane.rowIndex="10">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+            <Button fx:id="addBtn" minWidth="100.0" mnemonicParsing="false" onAction="#addMember" prefHeight="27.0" prefWidth="100.0" text="Add" textOverrun="ELLIPSIS" />
+            <Button fx:id="editBtn" minWidth="100.0" mnemonicParsing="false" onAction="#editMember" prefHeight="27.0" prefWidth="100.0" text="Update" visible="true" GridPane.columnIndex="1" />
+            <Button minWidth="100.0" mnemonicParsing="false" onAction="#close" prefHeight="27.0" prefWidth="92.0" text="Cancel" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
 
       </children>
       <columnConstraints>
@@ -66,6 +72,7 @@
         <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
