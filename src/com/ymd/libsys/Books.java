@@ -1,21 +1,20 @@
 package com.ymd.libsys;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public class Books {
 
-	private List<Book> books;
+	private HashMap<String, Book> books;
 	
 	public Books() {
-		books = new ArrayList<Book>();
+		books = new HashMap<String, Book>();
 	}
 
-	public List<Book> getBooks() {
+	public HashMap<String, Book> getBooks() {
 		return books;
 	}
 
-	public void setBooks(List<Book> books) {
+	public void setBooks(HashMap<String, Book> books) {
 		this.books = books;
 	}
 	
