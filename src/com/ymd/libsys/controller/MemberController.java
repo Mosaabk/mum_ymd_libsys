@@ -72,7 +72,7 @@ public class MemberController {
 	   @FXML
 	    private void initialize() 
 	    {
-		   
+		   try {
 		   memberIdT.setCellValueFactory(new PropertyValueFactory<Member, String>(
 					"id"));
 		   
@@ -92,6 +92,8 @@ public class MemberController {
 					"zipcode"));
 		   
 		   listMembers();  
+		   }
+		   catch(Exception ex) {}
 		   
 	    }
 	   
@@ -162,7 +164,7 @@ public class MemberController {
 
 	    @Override
 	    public ObservableList<Member> call(){
-	    	String filePath = "src/com/ymd/libsys/members";
+	    	String filePath = "src/com/ymd/libsys/dataaccess/members";
 			String res = MyTool.readStringFromFile(filePath);
 			Members members = JSON.parseObject(res, Members.class);
 			

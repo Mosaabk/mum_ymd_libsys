@@ -48,11 +48,13 @@ public class MainMenuController {
 	   btnAddBook.setVisible(false);
 	   btnAddCopy.setVisible(false);
 	   btnCheckout.setVisible(false);
+	   btnShowMembers.setVisible(false);
 	   if(r == 1 || r == 3) {
 		   btnAddMem.setVisible(true);
 		   btnEditMem.setVisible(true);
 		   btnAddBook.setVisible(true);
 		   btnAddCopy.setVisible(true);
+		   btnShowMembers.setVisible(true);
 	   }
 	   if(r == 2 || r == 3) {
 		   btnCheckout.setVisible(true);
