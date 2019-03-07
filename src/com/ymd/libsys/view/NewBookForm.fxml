@@ -10,11 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<<<<<<< HEAD
-<AnchorPane prefHeight="470.999977929685" stylesheets="@main.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ymd.libsys.controller.BookController">
-=======
 <AnchorPane prefHeight="470.999977929685" stylesheets="@main.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.ymd.libsys.controller.BookController">
->>>>>>> branch 'master' of https://github.com/Mosaabk/mum_ymd_libsys
   <!-- TODO Add Nodes -->
   <children>
     <GridPane hgap="20.0" layoutX="14.0" prefHeight="393.0" prefWidth="459.0">

@@ -60,7 +60,7 @@ public class Book {
 	}
 	
 	public void addCopy() {
-		this.copies.add(new BookCopy(this,this.copies.size()+1));
+		this.copies.add(new BookCopy(this.copies.size()+1));
 	}
 	
 	
