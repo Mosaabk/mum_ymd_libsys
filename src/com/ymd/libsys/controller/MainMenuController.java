@@ -115,7 +115,6 @@ public class MainMenuController {
     	case 4:
     		screen = "MemberList";
     		break;
-    		
     	case 5:
     		screen = "NewBookForm";
     		break;

@@ -1,4 +1,4 @@
-package com.ymd.libsys.controller;
+	package com.ymd.libsys.controller;
 import javafx.concurrent.Task;
 
 import com.alibaba.fastjson.JSON;
@@ -109,7 +109,7 @@ public class MemberController {
 	
 	@FXML
 	private void close() {
-		SystemObj.openMenu();
+//		SystemObj.openMenu();
 	}
 
 	@FXML
@@ -149,6 +149,7 @@ public class MemberController {
 			System.out.println(ex.getMessage());
 		}
 	}
+<<<<<<< HEAD
 	
 	public void goToAdd() {
 		SystemObj.openWindow("Member", this);
@@ -160,8 +161,10 @@ public class MemberController {
 		
 		}
 		catch(Exception ex) {}
+=======
+>>>>>>> branch 'master' of https://github.com/Mosaabk/mum_ymd_libsys
 
-	}
+	
 	class GetAllMembers extends Task {
 
 	    @Override
