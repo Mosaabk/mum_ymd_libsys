@@ -149,7 +149,11 @@ public class MemberController {
 			System.out.println(ex.getMessage());
 		}
 	}
-<<<<<<< HEAD
+
+	@FXML
+	public void backToMenu() {
+		SystemObj.openMenu();
+	}
 	
 	public void goToAdd() {
 		SystemObj.openWindow("Member", this);
@@ -161,8 +165,7 @@ public class MemberController {
 		
 		}
 		catch(Exception ex) {}
-=======
->>>>>>> branch 'master' of https://github.com/Mosaabk/mum_ymd_libsys
+	}
 
 	
 	class GetAllMembers extends Task {
@@ -181,4 +184,5 @@ public class MemberController {
 
 	}
 }
+
 

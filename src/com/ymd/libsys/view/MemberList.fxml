@@ -37,7 +37,7 @@
               </rowConstraints>
                <children>
                   <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="171.0" text="Add New Member" />
-                  <Button mnemonicParsing="false" text="Delete A Member" GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#backToMenu" text="Back" GridPane.columnIndex="1" />
                </children>
             </GridPane>
       <!--   <VBox prefHeight="530.9999000000025" prefWidth="133.0" spacing="25.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
