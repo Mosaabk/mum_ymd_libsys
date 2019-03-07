@@ -22,7 +22,7 @@ public class SuperUser {
 	}
 	
 	public static int checkUserType(User user) {
-		String usersPath = "src/com/ymd/libsys/users";
+		String usersPath = "src/com/ymd/libsys/dataaccess/users";
 		String res = MyTool.readStringFromFile(usersPath);
 		try {
 			
