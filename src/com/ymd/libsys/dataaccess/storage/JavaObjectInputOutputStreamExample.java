@@ -20,8 +20,7 @@ public class JavaObjectInputOutputStreamExample {
 		try {
 
 			// Store Serialized User Object in File
-			FileOutputStream fileOutputStream = new FileOutputStream(
-					OUTPUT_DIR);
+			FileOutputStream fileOutputStream = new FileOutputStream(OUTPUT_DIR);
 			User user = new User("test", "Mohanraj", "rmohanraj@mum.edu");
 			ObjectOutputStream output = new ObjectOutputStream(fileOutputStream);
 			output.writeObject(user);

@@ -1,5 +1,8 @@
 package com.ymd.libsys.controller;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import com.ymd.libsys.SystemUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,7 +52,7 @@ public class LoginController {
 
         SystemUser su = new SystemUser(s1, s2);
         int loginRes = su.login(s1, s2);
-        loginRes = 3;
+        loginRes = 2 ;
 
 
         alert.setTitle("Login ... Test!");
@@ -95,7 +98,7 @@ public class LoginController {
     		screen = "";
     		break;
     	case 1:
-    		screen = "Book";
+    		screen = "MainMenu";
     		break;
     	case 2:
     		screen = "Checkout";
@@ -106,11 +109,18 @@ public class LoginController {
     	}
     	
     	try {
+    		screen = "MainMenu";
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/ymd/libsys/view/" + screen + ".fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            
+			Parent root1 = (Parent) fxmlLoader.load();
+			
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));  
+
+			MainMenuController controller = fxmlLoader.<MainMenuController>getController();
+			controller.setRoles(s);
+			
             stage.show();
 
         } catch(Exception e) {
