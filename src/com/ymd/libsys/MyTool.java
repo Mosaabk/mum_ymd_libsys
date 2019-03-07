@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 public class MyTool {
 	
 	/*
-	 * filePath like this src/com/ymd/libsys/members
+	 * filePath like this src/com/ymd/libsys/dataaccess/members
 	 */
 	public static void WriteStringToFile(String dataString, String filePath) {
 		File writename = new File(filePath); 

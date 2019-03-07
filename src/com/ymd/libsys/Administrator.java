@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSON;
 public class Administrator {
 	
 	public static void addNewBook(Book book) {
-		String booksPath = "src/com/ymd/libsys/books";
+		String booksPath = "src/com/ymd/libsys/dataaccess/books";
 		String res = MyTool.readStringFromFile(booksPath);
 		if (res.equals("")) {
 			Books books = new Books();
