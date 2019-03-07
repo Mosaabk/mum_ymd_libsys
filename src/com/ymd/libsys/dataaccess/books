@@ -1,12 +1,1 @@
-<<<<<<< HEAD
-{"books":{"56461232":{"ISBN":"56461232","authors":[{"address":{"city":"","state":"","street":"","zipCode":""},"firstName":"Ahmed Yassien","id":10028,"lastName":"","phoneNum":""}],"borrowLimit":0,"copies":[{"copyId":1,"isCheckedout":true},{"copyId":2,"isCheckedout":true}],"iSBN":"56461232","title":"Java Book"}}}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-{"books":{"123":{"ISBN":"123","authors":[],"copies":[{"copyId":1,"isCheckedout":false},{"copyId":2,"isCheckedout":false},{"copyId":3,"isCheckedout":false},{"copyId":4,"isCheckedout":false}],"iSBN":"123"},"1233":{"ISBN":"1233","authors":[{"address":{"city":"Washington","state":"District of Colombia","street":"Connect av.","zipCode":"53553"},"firstName":"Cay","id":10027,"lastName":"Horstmann","phoneNum":"389 490 1092"}],"copies":[{"copyId":1,"isCheckedout":false},{"copyId":2,"isCheckedout":false},{"copyId":3,"isCheckedout":false},{"copyId":4,"isCheckedout":false}],"iSBN":"1233","title":"Java SE 8 for the Really Impatient,"}}}
-=======
->>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
-=======
-{"books":{"56461232":{"ISBN":"56461232","authors":[{"address":{"city":"","state":"","street":"","zipCode":""},"firstName":"Ahmed Yassien","id":10028,"lastName":"","phoneNum":""}],"borrowLimit":0,"copies":[{"copyId":1,"isCheckedout":false},{"copyId":2,"isCheckedout":false}],"iSBN":"56461232","title":"Java Book"}}}
->>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
->>>>>>> branch 'master' of https://github.com/Mosaabk/mum_ymd_libsys
+{"books":{"978-0596009205":{"ISBN":"978-0596009205","authors":[{"address":{"city":"","state":"","street":"","zipCode":""},"firstName":" Bert Bates","id":0,"lastName":"","phoneNum":""},{"address":{"city":"","state":"","street":"","zipCode":""},"firstName":"Kathy Sierra","id":0,"lastName":"","phoneNum":""}],"borrowLimit":0,"copies":[{"copyId":1,"isCheckedout":false},{"copyId":2,"isCheckedout":false}],"iSBN":"978-0596009205","title":"Head First Java, 2nd Edition"},"978-0132575669":{"ISBN":"978-0132575669","authors":[{"address":{"city":"","state":"","street":"","zipCode":""},"firstName":"Paul Deitel","id":0,"lastName":"","phoneNum":""},{"address":{"city":"","state":"","street":"","zipCode":""},"firstName":"Harvey Deitel","id":0,"lastName":"","phoneNum":""}],"borrowLimit":0,"copies":[{"copyId":1,"isCheckedout":false},{"copyId":2,"isCheckedout":false}],"iSBN":"978-0132575669","title":"Java How to program?"}}}

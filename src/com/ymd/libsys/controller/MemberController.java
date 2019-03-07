@@ -109,7 +109,7 @@ public class MemberController {
 	
 	@FXML
 	private void close() {
-//		SystemObj.openMenu();
+		SystemObj.openMenu();
 	}
 
 	@FXML
