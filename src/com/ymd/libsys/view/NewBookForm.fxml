@@ -13,17 +13,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="470.999977929685" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="">
+<AnchorPane prefHeight="470.999977929685" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.ymd.libsys.controller.BookController">
   <!-- TODO Add Nodes -->
   <children>
     <GridPane hgap="20.0" layoutX="14.0" layoutY="0.0" prefHeight="393.0" prefWidth="459.0">
       <children>
         <Label alignment="CENTER" text="Title" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
-        <TextField fx:id="title" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <TextField fx:id="titleT" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
         <Label text="ISBN" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-        <TextField fx:id="ISBN" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="isbnT" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Label contentDisplay="LEFT" text="Author" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-        <ComboBox fx:id="author" prefHeight="21.0" prefWidth="311.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <ComboBox fx:id="authors" prefHeight="21.0" prefWidth="311.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="Item 1" />
@@ -34,7 +34,7 @@
         </ComboBox>
         
         <Label text="Checkout Limit" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-        <TextField fx:id="checkoutLimit" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <TextField fx:id="checkoutLimitT" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
         
         <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
           <children>

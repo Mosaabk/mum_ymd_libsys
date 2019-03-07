@@ -4,10 +4,21 @@ import com.ymd.libsys.Book;
 import com.ymd.libsys.ui.SystemObj;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 public class BookController {
+	
+	@FXML
+	private TextField titleT;
+	@FXML
+	private TextField isbnT;
+	@FXML
+	private ComboBox<String> authors;
+	@FXML
+	private TextField checkoutLimitT;
 	
 	
 	@FXML

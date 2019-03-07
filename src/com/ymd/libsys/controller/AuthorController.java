@@ -2,7 +2,7 @@ package com.ymd.libsys.controller;
 
 import com.ymd.libsys.Address;
 import com.ymd.libsys.Author;
-import com.ymd.libsys.Member;
+import com.ymd.libsys.ui.SystemObj;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -27,9 +27,12 @@ public class AuthorController {
 	private TextField zip;
 	
 	@FXML
-	private Button addBtn;
+	private TextField credentials;
+	
 	@FXML
-	private Button editBtn;
+	private Button btnAdd;
+	@FXML
+	private Button btnEdit;
 	
 	
 
@@ -38,7 +41,12 @@ public class AuthorController {
 		Address address = new Address(street.getText(),city.getText(),state.getText(),zip.getText());
 		Author author = Author.addAuthor(firstName.getText(), lastName.getText(), phone.getText(), address);
 		
-		memberId.setText(String.valueOf(m.getId()));
+//		authorId.setText(String.valueOf(author.getId()));
+	}
+	
+	@FXML
+	private void close() {
+		SystemObj.openMenu();
 	}
 	
 	@FXML
