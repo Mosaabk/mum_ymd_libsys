@@ -1,4 +1,4 @@
-package com.ymd.libsys.controller;
+	package com.ymd.libsys.controller;
 import javafx.concurrent.Task;
 
 import com.alibaba.fastjson.JSON;
@@ -107,7 +107,7 @@ public class MemberController {
 	
 	@FXML
 	private void close() {
-		SystemObj.openMenu();
+//		SystemObj.openMenu();
 	}
 
 	@FXML

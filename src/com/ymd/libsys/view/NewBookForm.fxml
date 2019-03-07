@@ -52,7 +52,7 @@
               </rowConstraints>
                <children>
                   <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="96.0" onAction="#addCopy" text="Add Copy" GridPane.rowIndex="1" />
-                  <Label  fx:id="copiesLbl" alignment="CENTER" prefHeight="17.0" prefWidth="151.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label  fx:id="copiesLbl" alignment="CENTER" prefHeight="17.0" prefWidth="151.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
         

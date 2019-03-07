@@ -9,8 +9,8 @@ public class Book {
 	public String ISBN;
 
 
-	private String title;
-	private int borrowLimit;
+	public String title;
+	public int borrowLimit;
 	
 	public List<Author> authors;
 	public List<BookCopy> copies;

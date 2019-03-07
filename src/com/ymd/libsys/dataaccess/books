@@ -1,1 +1,4 @@
+<<<<<<< HEAD
 {"books":{"123":{"ISBN":"123","authors":[],"copies":[{"copyId":1,"isCheckedout":false},{"copyId":2,"isCheckedout":false},{"copyId":3,"isCheckedout":false},{"copyId":4,"isCheckedout":false}],"iSBN":"123"},"1233":{"ISBN":"1233","authors":[{"address":{"city":"Washington","state":"District of Colombia","street":"Connect av.","zipCode":"53553"},"firstName":"Cay","id":10027,"lastName":"Horstmann","phoneNum":"389 490 1092"}],"copies":[{"copyId":1,"isCheckedout":false},{"copyId":2,"isCheckedout":false},{"copyId":3,"isCheckedout":false},{"copyId":4,"isCheckedout":false}],"iSBN":"1233","title":"Java SE 8 for the Really Impatient,"}}}
+=======
+>>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
