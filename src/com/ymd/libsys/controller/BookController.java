@@ -62,7 +62,15 @@ public class BookController {
 	
 	@FXML
 	public void editBook() {
-		
+		Book b = new Book(isbnT.getText(),titleT.getText(),0);
+		for(Author o : thisBook.authors) {
+			b.addAuthor(o);
+		}
+		for(BookCopy c : thisBook.copies) {
+			b.addCopy();
+		}
+		thisBook.editBook(b);
+		thisBook = b;
 	}
 	
 	@FXML
@@ -110,6 +118,16 @@ public class BookController {
 	}
 	@FXML
 	public void openBook() {
-		
+		System.out.println(isbnT.getText());
+		System.out.println(thisBook);
+		thisBook = Book.getBook(isbnT.getText());
+		copiesLbl.setText("");
+		titleT.setText(thisBook.getTitle());
+		checkoutLimitT.setText("0");
+		Boolean fst = false;
+		for(BookCopy c : thisBook.copies) {
+			copiesLbl.setText(copiesLbl.getText() + (fst? ", ":"") + String.valueOf(c.copyId));
+			fst = true;
+		}
 	}
 }

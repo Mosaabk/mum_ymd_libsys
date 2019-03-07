@@ -86,7 +86,7 @@ public class Member extends Person {
 
 		try {
 			
-			String filePath = "src/com/ymd/libsys/members";
+			String filePath = "src/com/ymd/libsys/dataaccess/members";
 			String res = MyTool.readStringFromFile(filePath);
 			Members members;
 			if (!res.equals("")) {
