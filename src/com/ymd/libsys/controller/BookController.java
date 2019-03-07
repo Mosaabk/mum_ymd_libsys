@@ -43,7 +43,6 @@ public class BookController {
 	
 	public BookController() {
 		thisBook = new Book();	
-		thisBook.addCopy();
 	}
 	@FXML
 	private void close() {
@@ -92,7 +91,7 @@ public class BookController {
 
 	@FXML
 	public void addBookAuthor() {
-		Book b = new Book(titleT.getText(),isbnT.getText(),0);
+		Book b = new Book(isbnT.getText(),titleT.getText(),0);
 		for(Author o : thisBook.authors) {
 			b.addAuthor(o);
 		}
@@ -110,7 +109,7 @@ public class BookController {
 	@FXML
 	public void addCopy() {
 		int id = thisBook.addCopy();
-		copiesLbl.setText(copiesLbl.getText() + ", " + String.valueOf(id));
+		copiesLbl.setText((id>1? copiesLbl.getText() + ", ":"") + String.valueOf(id));
 	}
 	@FXML
 	public void back() {
@@ -118,16 +117,18 @@ public class BookController {
 	}
 	@FXML
 	public void openBook() {
-		System.out.println(isbnT.getText());
-		System.out.println(thisBook);
+
 		thisBook = Book.getBook(isbnT.getText());
-		copiesLbl.setText("");
-		titleT.setText(thisBook.getTitle());
-		checkoutLimitT.setText("0");
-		Boolean fst = false;
-		for(BookCopy c : thisBook.copies) {
-			copiesLbl.setText(copiesLbl.getText() + (fst? ", ":"") + String.valueOf(c.copyId));
-			fst = true;
+		if(thisBook!= null) {
+			
+			copiesLbl.setText("");
+			titleT.setText(thisBook.getTitle());
+			checkoutLimitT.setText("0");
+			Boolean fst = false;
+			for(BookCopy c : thisBook.copies) {
+				copiesLbl.setText(copiesLbl.getText() + (fst? ", ":"") + String.valueOf(c.copyId));
+				fst = true;
+			}
 		}
 	}
 }

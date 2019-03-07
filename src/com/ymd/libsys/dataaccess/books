@@ -1,1 +1,0 @@
-{"books":{"123":{"ISBN":"123","authors":[],"borrowLimit":0,"copies":[{"copyId":1,"isCheckedout":false},{"copyId":2,"isCheckedout":false},{"copyId":3,"isCheckedout":false},{"copyId":4,"isCheckedout":false}],"title":"AbcD"}}}
