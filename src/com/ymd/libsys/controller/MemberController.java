@@ -1,12 +1,24 @@
 	package com.ymd.libsys.controller;
+import javafx.concurrent.Task;
 
+import com.alibaba.fastjson.JSON;
 import com.ymd.libsys.Address;
 import com.ymd.libsys.Member;
+
+import com.ymd.libsys.Members;
+import com.ymd.libsys.MyTool;
 import com.ymd.libsys.ui.SystemObj;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 
 
@@ -34,6 +46,64 @@ public class MemberController {
 	@FXML
 	private Button editBtn;
 
+	@FXML
+	private TableView<Member> memberTable;
+	
+	@FXML
+	private TableColumn<Member, String> memberIdT;
+	
+	@FXML
+	private TableColumn<Member, String> firstNameT;
+	@FXML
+	private TableColumn<Member, String> lastNameT;
+	@FXML
+	private TableColumn<Member, String> phoneNumT;
+	@FXML
+	private TableColumn<Member, String> streetT;
+	@FXML
+	private TableColumn<Member, String> cityT;
+	@FXML
+	private TableColumn<Member, String> stateT;
+	@FXML
+	private TableColumn<Member, String> zipcodeT;
+		
+	
+	
+	   @FXML
+	    private void initialize() 
+	    {
+		   
+		   memberIdT.setCellValueFactory(new PropertyValueFactory<Member, String>(
+					"id"));
+		   
+		   firstNameT.setCellValueFactory(new PropertyValueFactory<Member, String>(
+					"firstName"));
+		   lastNameT.setCellValueFactory(new PropertyValueFactory<Member, String>(
+					"lastName"));
+		   phoneNumT.setCellValueFactory(new PropertyValueFactory<Member, String>(
+					"phoneNum"));
+		   streetT.setCellValueFactory(new PropertyValueFactory<Member, String>(
+					"street"));
+		   cityT.setCellValueFactory(new PropertyValueFactory<Member, String>(
+					"city"));
+		   stateT.setCellValueFactory(new PropertyValueFactory<Member, String>(
+					"state"));
+		   zipcodeT.setCellValueFactory(new PropertyValueFactory<Member, String>(
+					"zipcode"));
+		   
+		   listMembers();  
+		   
+	    }
+	   
+    @FXML
+    public void listMembers(){
+        Task<ObservableList<Member>> task = new GetAllMembers();
+        memberTable.itemsProperty().bind(task.valueProperty());
+
+//        task.setOnSucceeded(e -> progressBar.setVisible(false));
+//        task.setOnFailed(e -> progressBar.setVisible(false));
+        new Thread(task).start();
+     }
 	
 	@FXML
 	private void close() {
@@ -76,6 +146,22 @@ public class MemberController {
 		catch(Exception ex) {
 			System.out.println(ex.getMessage());
 		}
+	}
+	
+	class GetAllMembers extends Task {
+
+	    @Override
+	    public ObservableList<Member> call(){
+	    	String filePath = "src/com/ymd/libsys/members";
+			String res = MyTool.readStringFromFile(filePath);
+			Members members = JSON.parseObject(res, Members.class);
+			
+	        return FXCollections.observableArrayList(members.getMembers());
+	               
+
+	    }
+
+
 	}
 }
 

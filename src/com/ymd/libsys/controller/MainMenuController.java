@@ -28,7 +28,7 @@ public class MainMenuController {
 	private Button btnCheckout;
 	
 	@FXML
-	private Button btnAddAuthor;
+	private Button btnShowMembers;
 	
 	@FXML
 	private Button btnLogout;
@@ -48,13 +48,11 @@ public class MainMenuController {
 	   btnAddBook.setVisible(false);
 	   btnAddCopy.setVisible(false);
 	   btnCheckout.setVisible(false);
-	   btnAddAuthor.setVisible(false);
 	   if(r == 1 || r == 3) {
 		   btnAddMem.setVisible(true);
 		   btnEditMem.setVisible(true);
 		   btnAddBook.setVisible(true);
 		   btnAddCopy.setVisible(true);
-		   btnAddAuthor.setVisible(true);
 	   }
 	   if(r == 2 || r == 3) {
 		   btnCheckout.setVisible(true);
@@ -88,7 +86,7 @@ public class MainMenuController {
 	}
 	
 	@FXML
-	public void addAuthor() {
+	public void showMembers() {
 		openScreen(4);
 	}
 	
@@ -113,7 +111,7 @@ public class MainMenuController {
     		screen = "Member";
     		break;
     	case 4:
-    		screen = "NewAuthorForm";
+    		screen = "MemberList";
     		break;
     		
     	case 5:
