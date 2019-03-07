@@ -1,5 +1,6 @@
 package com.ymd.libsys;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
@@ -9,15 +10,22 @@ public class Book {
 	
 	private List<Author> authors;
 	
+
+	public Book() {
+		super();
+		this.authors = new ArrayList<Author>();
+	}
 	
 	public Book(String ISBN, String title, int borrowLimit) {
+		super();
 		this.ISBN = ISBN;
 		this.title = title;
 		this.borrowLimit = borrowLimit;
+		this.authors = new ArrayList<Author>();
 	}
 	
-	public void setAuthors(List<Author> authors) {
-		this.authors = authors;
+	public void addAuthors(Author authors) {
+		this.authors.add(authors);
 	}
 	
 	
