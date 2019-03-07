@@ -45,7 +45,12 @@ public class SystemUser {
 		this.userName = userName;
 		this.password = password;
 		
-		return 1;
+		User u = new User();
+		u.setUserName(userName);
+		u.setPassword(password);
+		
+		return SuperUser.checkUserType(u);
+		
 	}
 
 }

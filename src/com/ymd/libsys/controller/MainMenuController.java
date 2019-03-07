@@ -2,9 +2,16 @@ package com.ymd.libsys.controller;
 
 import java.io.InputStream;
 
+import com.ymd.libsys.ui.SystemObj;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class MainMenuController {
 	
@@ -19,8 +26,11 @@ public class MainMenuController {
 	private Button btnAddCopy;
 	@FXML
 	private Button btnCheckout;
-	
 
+	@FXML
+	private Button btnLogout;
+	
+	
    @FXML
     private void initialize() 
     {
@@ -49,26 +59,51 @@ public class MainMenuController {
 
 	@FXML
 	public void addNewMember() {
-	
+		openScreen(3);
 	}
 	
 	@FXML
 	public void editMember() {
-		
+		openScreen(3);
 	}
 	
 	@FXML
 	public void checkoutBook() {
-		
+		openScreen(1);
 	}
 	
 	@FXML
 	public void addBook() {
-		
+		openScreen(0);
 	}
-	
+
 	@FXML
 	public void addCopy() {
-		
+		openScreen(0);
 	}
+
+	@FXML
+	public void logOut() {
+		SystemObj.openLogin();
+	}
+
+    private void openScreen(int s) {
+    	String screen = "";
+    	switch(s) {
+    	case 0:
+    		screen = "Book";
+    		break;
+    	case 1:
+    		screen = "Checkout";
+    		break;
+    	case 2:
+    		screen = "CheckoutTable";
+    		break;
+    	case 3:
+    		screen = "Member";
+    		break;
+    	}
+    	
+    	SystemObj.openWindow(screen, this);
+    }
 }

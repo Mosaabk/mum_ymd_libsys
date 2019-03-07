@@ -1,6 +1,7 @@
 package com.ymd.libsys.controller;
 
 import com.ymd.libsys.CheckoutEntry;
+import com.ymd.libsys.ui.SystemObj;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -52,7 +53,7 @@ public class CheckoutController {
 	
 	@FXML
 	public void back() {
-		
+		SystemObj.openMenu();
 	}
 	
 }

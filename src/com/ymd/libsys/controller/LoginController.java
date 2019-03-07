@@ -1,22 +1,18 @@
 package com.ymd.libsys.controller;
 
-import java.io.IOException;
-import java.io.InputStream;
 
 import com.ymd.libsys.SystemUser;
+import com.ymd.libsys.ui.SystemObj;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-//import javafx.scene.control.Alert;
-
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-//import javafx.scene.control.Alert.AlertType;
-import com.ymd.libsys.SystemUser;
 
 
 import javafx.stage.Stage;
@@ -39,7 +35,6 @@ public class LoginController {
         btn.setVisible(true);
     }
     public void submit(ActionEvent ae) {
-//        Alert alert = new Alert(AlertType.INFORMATION);
 
         String s1, s2;
 
@@ -52,22 +47,18 @@ public class LoginController {
 
         SystemUser su = new SystemUser(s1, s2);
         int loginRes = su.login(s1, s2);
-        loginRes = 2 ;
-
-
-//        alert.setTitle("Login ... Test!");
 
         int screen = -1;
 
         System.out.println(su.getRole());
 
         switch (loginRes){
-            case 0:
+            case -1:
                 System.out.println("fail");
                 break;
             case 1:
-                System.out.println("System User");
-                screen = 0;
+                System.out.println("Super User");
+                screen = 3;
                 break;
             case 2:
                 System.out.println("Admin");
@@ -77,39 +68,19 @@ public class LoginController {
                 System.out.println("Librarian");
                 screen = 2;
                 break;
-            case 4:
-                System.out.println("Super User");
-                screen = 3;
-                break;
 
         }
 
-        openScreen(screen);
+        openScreen(screen, ae);
 
-        //((ae.getSource())).getScene().getWindow().hide();
 
 
     }
     
-    private void openScreen(int s) {
-    	String screen = "";
-    	switch(s) {
-    	case 0:
-    		screen = "";
-    		break;
-    	case 1:
-    		screen = "MainMenu";
-    		break;
-    	case 2:
-    		screen = "Checkout";
-    		break;
-    	case 3:
-    		screen = "Member";
-    		break;
-    	}
+    private void openScreen(int s, ActionEvent ae) {
+    	String screen = "MainMenu";
     	
     	try {
-    		screen = "MainMenu";
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/ymd/libsys/view/" + screen + ".fxml"));
             
@@ -117,10 +88,14 @@ public class LoginController {
 			
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));  
-
+            
 			MainMenuController controller = fxmlLoader.<MainMenuController>getController();
 			controller.setRoles(s);
 			
+			SystemObj.lw = ((Node)ae.getSource()).getScene().getWindow();
+			SystemObj.lw.hide();
+			
+			SystemObj.mw = SystemObj.cw = stage.getScene().getWindow();
             stage.show();
 
         } catch(Exception e) {

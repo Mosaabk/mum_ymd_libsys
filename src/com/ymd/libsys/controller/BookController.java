@@ -1,6 +1,8 @@
 package com.ymd.libsys.controller;
 
 import com.ymd.libsys.Book;
+import com.ymd.libsys.ui.SystemObj;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -38,6 +40,6 @@ public class BookController {
 	
 	@FXML
 	public void back() {
-		
+		SystemObj.openMenu();
 	}
 }

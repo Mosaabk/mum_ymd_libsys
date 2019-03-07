@@ -1,5 +1,7 @@
 package com.ymd.libsys.controller;
 
+import com.ymd.libsys.ui.SystemObj;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -33,7 +35,7 @@ public class MemberController {
 	
 	@FXML
 	private void close() {
-		
+		SystemObj.openMenu();
 	}
 
 	@FXML
