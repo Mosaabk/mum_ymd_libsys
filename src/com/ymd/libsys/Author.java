@@ -3,6 +3,7 @@ package com.ymd.libsys;
 import java.util.List;
 
 public class Author extends Person {
+	private int id;
 	Person personalData;
 	String shortBio;
 	String credentials;

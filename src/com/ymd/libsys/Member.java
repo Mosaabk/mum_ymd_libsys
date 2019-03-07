@@ -10,6 +10,7 @@ public class Member extends Person {
 	public Member() {
 		super();
 	}
+	
 	public static Member addMember(String firstName, String lastName, String phoneNum, Address address) {
 		Member m = new Member(firstName, lastName, phoneNum, address);
 		m.id = 0;
