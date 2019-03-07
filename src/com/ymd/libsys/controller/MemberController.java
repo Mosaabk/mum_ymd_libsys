@@ -155,9 +155,11 @@ public class MemberController {
 	}
 	
 	public void goToEdit() {
+		try {
 		Member m = memberTable.getSelectionModel().getSelectedItem();
 		
-		System.out.println(m.getId());
+		}
+		catch(Exception ex) {}
 
 	}
 	class GetAllMembers extends Task {
