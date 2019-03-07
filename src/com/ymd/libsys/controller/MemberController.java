@@ -147,17 +147,8 @@ public class MemberController {
 			System.out.println(ex.getMessage());
 		}
 	}
-	
-	public void goToAdd() {
-		SystemObj.openWindow("Member", this);
-	}
-	
-	public void goToEdit() {
-		Member m = memberTable.getSelectionModel().getSelectedItem();
-		
-		System.out.println(m.getId());
 
-	}
+	
 	class GetAllMembers extends Task {
 
 	    @Override
