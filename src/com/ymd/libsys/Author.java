@@ -46,6 +46,11 @@ public class Author extends Person {
 	public void setBooks(List<Book> books) {
 		this.books = books;
 	}
+	
+	public void addAuthor() {}
+	public void editAuthor() {}
+	public void getAuthor() {}
+
 
 	
 }

@@ -1,6 +1,7 @@
 package com.ymd.libsys.controller;
 
 import com.ymd.libsys.Address;
+import com.ymd.libsys.Author;
 import com.ymd.libsys.Member;
 
 import javafx.fxml.FXML;
@@ -9,7 +10,7 @@ import javafx.scene.control.TextField;
 
 public class AuthorController {
 	@FXML
-	private TextField memberId;
+	private TextField authorId;
 	@FXML
 	private TextField firstName;
 	@FXML
@@ -35,14 +36,14 @@ public class AuthorController {
 	@FXML
 	public void  addAuthor() {
 		Address address = new Address(street.getText(),city.getText(),state.getText(),zip.getText());
-		Author author = Author.addMember(firstName.getText(), lastName.getText(), phone.getText(), address);
+		Author author = Author.addAuthor(firstName.getText(), lastName.getText(), phone.getText(), address);
 		
 		memberId.setText(String.valueOf(m.getId()));
 	}
 	
 	@FXML
-	public void  getMember() {
-		Author m = Author.getMember(Integer.valueOf( memberId.getText()));
+	public void  getAuthor() {
+		Author m = Author.getAuthor(Integer.valueOf( authorId.getText()));
 		if(m != null && m.getId()>= 0) {
 			firstName.setText(m.getFirstName());
 			lastName.setText(m.getLastName());
@@ -58,11 +59,11 @@ public class AuthorController {
 	@FXML
 	public void editAuthor() {
 		try {
-			Author m = Author.getAuthor(Integer.valueOf( memberId.getText()));
+			Author m = Author.getAuthor(Integer.valueOf( authorId.getText()));
 
 			Address address = new Address(street.getText(),city.getText(),state.getText(),zip.getText());
 			Author mn = new Author(firstName.getText(), lastName.getText(), phone.getText(), address);
-			mn.setId(Integer.valueOf( memberId.getText()));
+			mn.setId(Integer.valueOf( authorId.getText()));
 			m.editAuthor(mn);
 		}
 		catch(Exception ex) {
