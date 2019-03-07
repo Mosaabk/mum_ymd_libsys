@@ -13,7 +13,7 @@
     <GridPane hgap="20.0" layoutX="14.0" layoutY="0.0" prefHeight="393.0" prefWidth="459.0">
       <children>
         <Label text="Member Id" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField fx:id="memberId" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <TextField fx:id="memberId" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#getMember" />
         <Label alignment="CENTER" text="First Name" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
         <TextField fx:id="firstName" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Label text="Last Name" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />

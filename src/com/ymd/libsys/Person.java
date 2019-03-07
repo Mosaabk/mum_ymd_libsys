@@ -10,6 +10,9 @@ public abstract class Person {
 	
 	private Address address;
 	
+	public Person() {
+	
+	}
 	public Person(String firstName, String lastName, String phoneNum, Address address) {
 		this.firstName = firstName;
 		this.lastName = lastName;

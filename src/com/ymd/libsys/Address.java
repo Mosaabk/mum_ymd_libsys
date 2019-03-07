@@ -1,12 +1,14 @@
 package com.ymd.libsys;
 
 public class Address {
-	String street;
-	String city;
-	String state;
-	String zipCode;
+	public String street;
+	public String city;
+	public String state;
+	public String zipCode;
 	
-	
+	public Address() {
+		super();
+	}
 	public Address(String street, String city, String state, String zipCode) {
 		super();
 		this.street = street;
