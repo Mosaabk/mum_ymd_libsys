@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
- fx:controller="com.ymd.libsys.controller.BookController"
- stylesheets="@main.css">
+ fx:controller="com.ymd.libsys.controller.BookController" stylesheets="@main.css">
   <!-- TODO Add Nodes -->
   <children>
     <GridPane layoutX="-14.0" layoutY="0.0" prefHeight="600.0" prefWidth="800.0">
@@ -47,4 +46,5 @@
       </rowConstraints>
     </GridPane>
   </children>
+
 </AnchorPane>

@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="468.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
- fx:controller="com.ymd.libsys.controller.CheckoutController"
- stylesheets="@main.css">
+ fx:controller="com.ymd.libsys.controller.CheckoutController" stylesheets="@main.css">
   <!-- TODO Add Nodes -->
   <children>
     <GridPane layoutX="-14.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
@@ -37,4 +36,5 @@
     </GridPane>
     <Button layoutX="258.0" layoutY="420.0" mnemonicParsing="false" onAction="#printRecord" prefWidth="68.0" text="Print" />
   </children>
+  
 </AnchorPane>
