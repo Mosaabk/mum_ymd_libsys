@@ -1,4 +1,4 @@
-	package com.ymd.libsys.controller;
+package com.ymd.libsys.controller;
 import javafx.concurrent.Task;
 
 import com.alibaba.fastjson.JSON;
@@ -148,6 +148,16 @@ public class MemberController {
 		}
 	}
 	
+	public void goToAdd() {
+		SystemObj.openWindow("Member", this);
+	}
+	
+	public void goToEdit() {
+		Member m = memberTable.getSelectionModel().getSelectedItem();
+		
+		System.out.println(m.getId());
+
+	}
 	class GetAllMembers extends Task {
 
 	    @Override
