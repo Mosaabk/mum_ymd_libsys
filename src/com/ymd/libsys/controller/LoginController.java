@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -30,6 +31,9 @@ public class LoginController {
     private Button btn;
 
     @FXML
+    private Label err;
+    
+    @FXML
     private void initialize() 
     {
         btn.setVisible(true);
@@ -42,36 +46,32 @@ public class LoginController {
 
         s2 = pf.getText();
         
-
-        System.out.println(s1 + " " + s2);
-
         SystemUser su = new SystemUser(s1, s2);
         int loginRes = su.login(s1, s2);
 
         int screen = -1;
-
-        System.out.println(su.getRole());
-
+        err.setText("");
         switch (loginRes){
-            case -1:
-                System.out.println("fail");
-                break;
-            case 1:
-                System.out.println("Super User");
+            case 3:
                 screen = 3;
                 break;
-            case 2:
-                System.out.println("Admin");
+            case 1:
                 screen = 1;
                 break;
-            case 3:
-                System.out.println("Librarian");
+            case 2:
                 screen = 2;
+                break;
+            default :
+                System.out.println("fail");
+                err.setText("Invalid login");
                 break;
 
         }
+        if(screen >= 1 && screen <=3) {
+        	openScreen(screen, ae);
 
-        openScreen(screen, ae);
+            pf.setText("");
+        }
 
 
 

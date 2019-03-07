@@ -24,10 +24,18 @@ public class SuperUser {
 	public static int checkUserType(User user) {
 		String usersPath = "src/com/ymd/libsys/users";
 		String res = MyTool.readStringFromFile(usersPath);
-		if (!res.equals("")) {
-			Users users = JSON.parseObject(res, Users.class);
-			return users.getUserHash().get(user.getUserName()).getUserType();
+		try {
+			
+			if (!res.equals("")) {
+				Users users = JSON.parseObject(res, Users.class);
+				User u = users.getUserHash().get(user.getUserName());
+				if(u.getPassword().equals(user.getPassword())) {
+					return u.getUserType();
+				}
+			}
+
 		}
+		catch(Exception e) {}
 		return -1;
 	}
 	
