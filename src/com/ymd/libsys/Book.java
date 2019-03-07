@@ -7,6 +7,8 @@ import com.alibaba.fastjson.JSON;
 
 public class Book {
 	private String ISBN;
+
+
 	private String title;
 	private int borrowLimit;
 	
@@ -27,6 +29,10 @@ public class Book {
 		this.authors = new ArrayList<Author>();
 		this.copies = new ArrayList<BookCopy>();
 		addCopy();
+	}
+	
+	public String getISBN() {
+		return ISBN;
 	}
 	
 	public void addAuthors(Author authors) {
