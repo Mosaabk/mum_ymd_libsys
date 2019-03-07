@@ -1,17 +1,16 @@
 package com.ymd.libsys;
 
 public class BookCopy {
-	Book book;
-	int copyId;
+	public int copyId;
+	public boolean isCheckedout;
 	
 	public BookCopy(){
 		super();
 	}
-	public BookCopy(Book book, int copyId){
+	public BookCopy( int copyId){
 		super();
-		
-		this.book = book;
 		this.copyId = copyId;
+		this.isCheckedout = false;
 	}
 	
 	

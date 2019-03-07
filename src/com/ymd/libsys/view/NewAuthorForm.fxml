@@ -34,7 +34,6 @@
         <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
           <children>
             <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addAuthor" prefWidth="56.0" text="Add" textOverrun="ELLIPSIS" />
-            <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#editAuthor" prefHeight="27.0" prefWidth="50.0" text="Edit" visible="true" />
             <Button mnemonicParsing="false" onAction="#close" prefHeight="27.0" prefWidth="69.0" text="Cancel">
               <HBox.margin>
                 <Insets />

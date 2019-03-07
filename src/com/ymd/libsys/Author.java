@@ -12,7 +12,9 @@ public class Author extends Person {
 	String credentials;
 	List<Book> books;
 	
-	
+	public Author() {
+		super();
+	}
 	
 	public Author(String firstname, String lastName, String phone, Address address, String credentials, String shortBio, List<Book> books) {
 		super(firstname, lastName, phone, address);

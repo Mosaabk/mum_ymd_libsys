@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="470.999977929685" stylesheets="@main.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ymd.libsys.controller.BookController">
+<AnchorPane prefHeight="470.999977929685" stylesheets="@main.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ymd.libsys.controller.BookController">
   <!-- TODO Add Nodes -->
   <children>
     <GridPane hgap="20.0" layoutX="14.0" prefHeight="393.0" prefWidth="459.0">
@@ -18,7 +18,7 @@
         <Label alignment="CENTER" text="Title" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
         <TextField fx:id="titleT" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
         <Label text="ISBN" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-        <TextField fx:id="isbnT" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="isbnT" prefWidth="200.0" GridPane.columnIndex="1" onAction="#openBook" GridPane.rowIndex="1" />
         <Label contentDisplay="LEFT" text="Author" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
         
         <Label prefHeight="17.0" prefWidth="92.0" text="Checkout Limit" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
@@ -38,7 +38,7 @@
             <Insets left="105.0" top="10.0" />
           </padding>
         </HBox>
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="311.0" text="Click To Add An Author" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="311.0" text="Click To Add An Author" onAction="#addBookAuthor" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="84.0" text="Copy" GridPane.rowIndex="4" />
             <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
               <columnConstraints>
@@ -51,8 +51,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="96.0" text="Add Copy" GridPane.rowIndex="1" />
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="151.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="96.0" onAction="#addCopy" text="Add Copy" GridPane.rowIndex="1" />
+                  <Label  fx:id="copiesLbl" alignment="CENTER" prefHeight="17.0" prefWidth="151.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
         

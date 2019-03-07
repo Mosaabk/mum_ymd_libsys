@@ -11,7 +11,7 @@ public class SystemObj {
 	public static Window mw;
 	public static Window lw;
 	
-	public static void openWindow(String screen, Object o) {
+	public static FXMLLoader openWindow(String screen, Object o) {
 
     	try {
 
@@ -25,10 +25,11 @@ public class SystemObj {
             SystemObj.cw.hide();
 			SystemObj.cw = stage.getScene().getWindow();
             stage.show();
-
+            return fxmlLoader;
         } catch(Exception e) {
             e.printStackTrace();
         }
+    	return null;
 	}
 	public static void openMenu()
 	{

@@ -2,11 +2,14 @@ package com.ymd.libsys.controller;
 
 import com.ymd.libsys.Address;
 import com.ymd.libsys.Author;
+import com.ymd.libsys.Book;
 import com.ymd.libsys.ui.SystemObj;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
 public class AuthorController {
 	@FXML
@@ -31,22 +34,34 @@ public class AuthorController {
 	
 	@FXML
 	private Button btnAdd;
-	@FXML
-	private Button btnEdit;
 	
+	private Book book;
+	private Window bookW;
 	
+	public void initBookAuthor(Book b, Window w) {
+		book = b;
+		bookW = w;
+	}
+	public void backToBook() {
+		SystemObj.cw.hide();
+
+        Stage stage = new Stage();
+        stage.setScene(bookW.getScene()); 
+        SystemObj.cw = stage.getScene().getWindow();
+        stage.show();
+	}
 
 	@FXML
 	public void  addAuthor() {
 		Address address = new Address(street.getText(),city.getText(),state.getText(),zip.getText());
 		Author author = Author.addAuthor(firstName.getText(), lastName.getText(), phone.getText(), address);
-		
-//		authorId.setText(String.valueOf(author.getId()));
+		book.addAuthor(author);
+		backToBook();
 	}
 	
 	@FXML
 	private void close() {
-		SystemObj.openMenu();
+		backToBook();
 	}
 	
 	@FXML
