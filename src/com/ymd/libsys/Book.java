@@ -6,19 +6,24 @@ import java.util.List;
 import com.alibaba.fastjson.JSON;
 
 public class Book {
-	private String ISBN;
+	public String ISBN;
 
 
 	private String title;
 	private int borrowLimit;
 	
-	private List<Author> authors;
-	private List<BookCopy> copies;
-	
-
+	public List<Author> authors;
+	public List<BookCopy> copies;
+	public String getTitle() {
+		return this.title;
+	}
+	public int getborrowLimit() {
+		return this.borrowLimit;
+	}
 	public Book() {
 		super();
 		this.authors = new ArrayList<Author>();
+		this.copies = new ArrayList<BookCopy>();
 	}
 	
 	public Book(String ISBN, String title, int borrowLimit) {
@@ -28,15 +33,14 @@ public class Book {
 		this.borrowLimit = borrowLimit;
 		this.authors = new ArrayList<Author>();
 		this.copies = new ArrayList<BookCopy>();
-		addCopy();
 	}
 	
 	public String getISBN() {
 		return ISBN;
 	}
 	
-	public void addAuthors(Author authors) {
-		this.authors.add(authors);
+	public void addAuthor(Author author) {
+		this.authors.add(author);
 	}
 	
 
@@ -59,9 +63,61 @@ public class Book {
 		}
 	}
 	
-	public void addCopy() {
+	public int addCopy() {
 		this.copies.add(new BookCopy(this.copies.size()+1));
+		return this.copies.size();
 	}
 	
+	public boolean editBook(Book b) {
+		boolean result = false;
+
+		try {
+			
+			String filePath = "src/com/ymd/libsys/dataaccess/books";
+			String res = MyTool.readStringFromFile(filePath);
+			Books books;
+			if (!res.equals("")) {
+				books = JSON.parseObject(res, Books.class);
+			}
+			else {
+				books = new Books();
+			}
+			
+			books.getBooks().remove(this.ISBN);
+			books.getBooks().put(this.ISBN, b);
+			
+			String membersString = JSON.toJSONString(books);
+			MyTool.WriteStringToFile(membersString, filePath);
+		}
+		catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		
+		return result;
+	}
+	public static Book getBook(String isbn) {
+		try {
+			
+			String filePath = "src/com/ymd/libsys/dataaccess/books";
+			String res = MyTool.readStringFromFile(filePath);
+			Books books;
+			if (!res.equals("")) {
+				books = JSON.parseObject(res, Books.class);
+			}
+			else {
+				books = new Books();
+			}
+
+			return books.getBooks().get(isbn);
+		}
+		catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+
+		return null;
+		
+	}
 	
 }
