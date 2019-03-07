@@ -9,12 +9,12 @@ public class Administrator {
 		String res = MyTool.readStringFromFile(booksPath);
 		if (res.equals("")) {
 			Books books = new Books();
-			books.getBooks().put(book.ISBN,book);
+			books.getBooks().put(book.getISBN(),book);
 			String bookString = JSON.toJSONString(books);
 			MyTool.WriteStringToFile(bookString, booksPath);
 		} else {
 			Books books = JSON.parseObject(res, Books.class);
-			books.getBooks().put(book.ISBN ,book);
+			books.getBooks().put(book.getISBN() ,book);
 			String bookString = JSON.toJSONString(books);
 			MyTool.WriteStringToFile(bookString, booksPath);
 		}
