@@ -79,7 +79,7 @@ public class MainMenuController {
 	
 	@FXML
 	public void addBook() {
-		openScreen(0);
+		openScreen(5);
 	}
 
 	@FXML
@@ -114,6 +114,10 @@ public class MainMenuController {
     		break;
     	case 4:
     		screen = "NewAuthorForm";
+    		break;
+    		
+    	case 5:
+    		screen = "NewBookForm";
     		break;
     	}
     	

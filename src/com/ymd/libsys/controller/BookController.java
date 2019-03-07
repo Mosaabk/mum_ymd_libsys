@@ -33,7 +33,12 @@ public class BookController {
 	@FXML
 	private TableColumn<Book, String> author;
 	
-
+	
+	@FXML
+	private void close() {
+		SystemObj.openMenu();
+	}
+	
 	@FXML
 	public void showNewBookForm() {
 		
@@ -46,6 +51,11 @@ public class BookController {
 	
 	@FXML
 	public void editBook() {
+		
+	}
+	
+	@FXML
+	public void addBook() {
 		
 	}
 	
