@@ -1,20 +1,10 @@
 package com.ymd.libsys.controller;
 
-import java.io.InputStream;
-
 import com.ymd.libsys.ui.SystemObj;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class MainMenuController {
-	
 	
 	@FXML
 	private Button btnAddMem;
@@ -23,7 +13,7 @@ public class MainMenuController {
 	@FXML
 	private Button btnAddBook;
 	@FXML
-	private Button btnAddCopy;
+	private Button btnBookList;
 	@FXML
 	private Button btnCheckout;
 	
@@ -46,14 +36,14 @@ public class MainMenuController {
 	   btnAddMem.setVisible(false);
 	   btnEditMem.setVisible(false);
 	   btnAddBook.setVisible(false);
-	   btnAddCopy.setVisible(false);
+	   btnBookList.setVisible(false);
 	   btnCheckout.setVisible(false);
 	   btnShowMembers.setVisible(false);
 	   if(r == 1 || r == 3) {
 		   btnAddMem.setVisible(true);
 		   btnEditMem.setVisible(true);
 		   btnAddBook.setVisible(true);
-		   btnAddCopy.setVisible(true);
+		   btnBookList.setVisible(true);
 		   btnShowMembers.setVisible(true);
 	   }
 	   if(r == 2 || r == 3) {
@@ -83,9 +73,10 @@ public class MainMenuController {
 	}
 
 	@FXML
-	public void addCopy() {
+	public void goToBookList() {
 		openScreen(0);
 	}
+	
 	
 	@FXML
 	public void showMembers() {

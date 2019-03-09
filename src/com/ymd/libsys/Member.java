@@ -9,6 +9,21 @@ public class Member extends Person {
 		super();
 	}
 	
+	
+	public String getStreet() {
+		return this.getAddress().street;
+	}
+	public String getCity() {
+		return this.getAddress().city;
+	}
+	public String getState() {
+		 return this.getAddress().state;
+	}
+	public String getZipCode() {
+		return this.getAddress().zipCode;
+	}
+	
+	
 	public static Member addMember(String firstName, String lastName, String phoneNum, Address address) {
 		Member m = new Member(firstName, lastName, phoneNum, address);
 		m.id = 0;

@@ -14,12 +14,14 @@ public class Book {
 	
 	public List<Author> authors;
 	public List<BookCopy> copies;
+	
 	public String getTitle() {
 		return this.title;
 	}
-	public int getborrowLimit() {
-		return this.borrowLimit;
-	}
+//	public String getborrowLimit() {
+//		String s = borrowLimit.g
+//		return "test";
+//	}
 	public Book() {
 		super();
 		this.authors = new ArrayList<Author>();
@@ -39,13 +41,26 @@ public class Book {
 		return ISBN;
 	}
 	
+	public int getCopyNum() {
+		return copies.size();
+	}
+	
+	public String getAuthorsAll() {
+		StringBuilder sb = new StringBuilder();
+		
+		for(Author author: authors) {
+			sb.append(author.getFirstName() +" " + author.getLastName());
+		}
+		return sb.toString();
+	}
+	
 	public void addAuthor(Author author) {
 		this.authors.add(author);
 	}
 	
 
 	public static void addBook(Book b) {
-		String bPath = "src/com/ymd/libsys/dataaccess/Books";
+		String bPath = "src/com/ymd/libsys/dataaccess/books";
 		String res = MyTool.readStringFromFile(bPath);
 		Books books;
 		String booksString;

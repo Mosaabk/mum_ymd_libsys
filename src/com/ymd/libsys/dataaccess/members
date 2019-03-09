@@ -1,1 +1,58 @@
-{"members":[{"address":{"city":"FF","state":"Iowa","street":"4th N","zipCode":"52557"},"firstName":"Ahmed","id":10001,"lastName":"Yassien","phoneNum":"+201003272773"}]}
+{
+	"members": [{
+		"address": {
+			"city": "FF",
+			"state": "Iowa",
+			"street": "4th N",
+			"zipCode": "52557"
+		},
+		"firstName": "Ahmed",
+		"id": 10001,
+		"lastName": "Yassien",
+		"phoneNum": "+201003272773"
+	}, {
+		"address": {
+			"city": "Washington",
+			"state": "DC",
+			"street": "Connecticut",
+			"zipCode": "54332"
+		},
+		"firstName": "Musab",
+		"id": 10002,
+		"lastName": "Alkhatib",
+		"phoneNum": "262 989 09776"
+	}, {
+		"address": {
+			"city": "FairField",
+			"state": "IA",
+			"street": "1000 N. 4th St",
+			"zipCode": "52557"
+		},
+		"firstName": "Ethan",
+		"id": 10003,
+		"lastName": "Duosi",
+		"phoneNum": "267 897 0082"
+	}, {
+		"address": {
+			"city": "FairField",
+			"state": "IA",
+			"street": "1000 N 4th street",
+			"zipCode": "65223"
+		},
+		"firstName": "John",
+		"id": 10004,
+		"lastName": "Doe",
+		"phoneNum": "256 787 2900"
+	}, {
+		"address": {
+			"city": "Chicago",
+			"state": "IL",
+			"street": "249 S Michigan St.",
+			"zipCode": "44321"
+		},
+		"firstName": "Sarah",
+		"id": 10005,
+		"lastName": "Doe",
+		"phoneNum": "676 989 0972"
+	}]
+}

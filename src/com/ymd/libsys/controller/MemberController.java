@@ -1,4 +1,5 @@
-	package com.ymd.libsys.controller;
+package com.ymd.libsys.controller;
+
 import javafx.concurrent.Task;
 
 import com.alibaba.fastjson.JSON;
@@ -81,7 +82,7 @@ public class MemberController {
 		   lastNameT.setCellValueFactory(new PropertyValueFactory<Member, String>(
 					"lastName"));
 		   phoneNumT.setCellValueFactory(new PropertyValueFactory<Member, String>(
-					"phoneNum"));
+					"city"));
 		   streetT.setCellValueFactory(new PropertyValueFactory<Member, String>(
 					"street"));
 		   cityT.setCellValueFactory(new PropertyValueFactory<Member, String>(
@@ -89,7 +90,7 @@ public class MemberController {
 		   stateT.setCellValueFactory(new PropertyValueFactory<Member, String>(
 					"state"));
 		   zipcodeT.setCellValueFactory(new PropertyValueFactory<Member, String>(
-					"zipcode"));
+					"zipCode"));
 		   
 		   listMembers();  
 		   }
@@ -109,7 +110,7 @@ public class MemberController {
 	
 	@FXML
 	private void close() {
-//		SystemObj.openMenu();
+		SystemObj.openMenu();
 	}
 
 	@FXML
@@ -161,7 +162,7 @@ public class MemberController {
 	
 	public void goToEdit() {
 		try {
-		Member m = memberTable.getSelectionModel().getSelectedItem();
+			Member m = memberTable.getSelectionModel().getSelectedItem();
 		
 		}
 		catch(Exception ex) {}
@@ -175,9 +176,7 @@ public class MemberController {
 	    	String filePath = "src/com/ymd/libsys/dataaccess/members";
 			String res = MyTool.readStringFromFile(filePath);
 			Members members = JSON.parseObject(res, Members.class);
-			
-	        return FXCollections.observableArrayList(members.getMembers());
-	               
+	        return FXCollections.observableArrayList(members.getMembers());         
 
 	    }
 

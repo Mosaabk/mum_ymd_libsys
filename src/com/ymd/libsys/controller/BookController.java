@@ -1,10 +1,18 @@
 package com.ymd.libsys.controller;
 
+import java.util.Collection;
+
+import com.alibaba.fastjson.JSON;
 import com.ymd.libsys.Author;
 import com.ymd.libsys.Book;
 import com.ymd.libsys.BookCopy;
+import com.ymd.libsys.Books;
+import com.ymd.libsys.MyTool;
 import com.ymd.libsys.ui.SystemObj;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
@@ -12,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Window;
 
 public class BookController {
@@ -28,7 +37,6 @@ public class BookController {
 	@FXML
 	private TextField checkoutLimitT;
 	
-	
 	@FXML
 	private TableView<Book> booksTV;
 	
@@ -40,10 +48,43 @@ public class BookController {
 	private TableColumn<Book, String> isbn;
 	@FXML
 	private TableColumn<Book, String> author;
+	@FXML
+	private TableColumn<Book, String> copyNum;
 	
 	public BookController() {
 		thisBook = new Book();	
 	}
+	
+	@FXML
+    private void initialize() 
+    {
+	   try {
+		   
+		   title.setCellValueFactory(		 new PropertyValueFactory<Book, String>("title"));
+		   isbn.setCellValueFactory(		 new PropertyValueFactory<Book, String>("ISBN"));
+		   author.setCellValueFactory(       new PropertyValueFactory<Book, String>("authorsAll"));
+//		   checkoutLimit.setCellValueFactory(new PropertyValueFactory<Book, String>("borrowLimit"));
+		   copyNum.setCellValueFactory(      new PropertyValueFactory<Book, String>("copyNum"));
+		   
+		   listBooks();  
+	   }
+	   catch(Exception ex) {
+			System.out.println("TEST: "+ex.getMessage());
+	   }
+	   
+    }
+    
+    @FXML
+    public void listBooks(){
+        Task<ObservableList<Book>> task = new GetAllBooks();
+        booksTV.itemsProperty().bind(task.valueProperty());
+
+//        task.setOnSucceeded(e -> progressBar.setVisible(false));
+//        task.setOnFailed(e -> progressBar.setVisible(false));
+        new Thread(task).start();
+     }
+    
+    
 	@FXML
 	private void close() {
 		SystemObj.openMenu();
@@ -106,15 +147,18 @@ public class BookController {
 		AuthorController controller = f.<AuthorController>getController();
 		controller.initBookAuthor(thisBook, thisWindow);
 	}
+	
 	@FXML
 	public void addCopy() {
 		int id = thisBook.addCopy();
 		copiesLbl.setText((id>1? copiesLbl.getText() + ", ":"") + String.valueOf(id));
 	}
+	
 	@FXML
 	public void back() {
 		SystemObj.openMenu();
 	}
+	
 	@FXML
 	public void openBook() {
 
@@ -130,5 +174,27 @@ public class BookController {
 				fst = true;
 			}
 		}
+	}
+	
+	class GetAllBooks extends Task {
+
+	    @Override
+	    public ObservableList<Book> call(){
+	    	String filePath = "src/com/ymd/libsys/dataaccess/books";
+			String res = MyTool.readStringFromFile(filePath);
+			Books books = JSON.parseObject(res, Books.class);
+	        Collection<Book> listOfBooks = books.getBooks().values(); 
+         	
+			for(Book b : listOfBooks) {
+				for(Author author: b.authors) {
+//					System.out.println(author.getFirstName());
+				}
+			}
+	        return FXCollections.observableArrayList(listOfBooks);
+	               
+
+	    }
+
+
 	}
 }
