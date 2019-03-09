@@ -8,12 +8,15 @@ public class CheckoutRecord {
 	
 	private Member member;
 	
-	Date checkoutDate;
-	Date dueDate;
+	public Date checkoutDate;
+	public Date dueDate;
 	
 	List<Fine> fines;
-	List<CheckoutEntry> checkoutEntry = new ArrayList<>();
+	public List<CheckoutEntry> checkoutEntry = new ArrayList<>();
 	
+	public CheckoutRecord() {
+		checkoutEntry = new ArrayList<>();
+	}
 	
 	public void addCheckoutEntry(CheckoutEntry entry) {
 		checkoutEntry.add(entry);
@@ -26,6 +29,10 @@ public class CheckoutRecord {
 	
 	public void setMember(Member member) {
 		this.member = member;
+	}
+	
+	public String toString() {
+		return "";
 	}
 	
 	
