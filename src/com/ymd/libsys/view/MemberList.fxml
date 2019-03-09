@@ -8,11 +8,8 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<<<<<<< HEAD
 <AnchorPane stylesheets="@main.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.ymd.libsys.controller.MemberController">
-=======
-<AnchorPane stylesheets="@main.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ymd.libsys.controller.MemberController">
->>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
+
   <!-- TODO Add Nodes -->
   <children>
     <GridPane layoutX="-14.0" layoutY="0.0" prefHeight="600.0" prefWidth="800.0">

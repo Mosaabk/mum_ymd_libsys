@@ -187,7 +187,7 @@ public class BookController {
          	
 			for(Book b : listOfBooks) {
 				for(Author author: b.authors) {
-//					System.out.println(author.getFirstName());
+					System.out.println(author.getFirstName());
 				}
 			}
 	        return FXCollections.observableArrayList(listOfBooks);
