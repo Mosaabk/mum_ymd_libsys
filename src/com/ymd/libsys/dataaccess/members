@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
 	"members": [{
 		"address": {
@@ -56,3 +57,6 @@
 		"phoneNum": "676 989 0972"
 	}]
 }
+=======
+{"members":[{"address":{"city":"Helllo","state":"Iowa","street":"4th N","zipCode":"52557"},"firstName":"Ahmed","id":10001,"lastName":"Yassien","phoneNum":"+201003272773"},{"address":{"city":"Vectoria","state":"Alexandria","street":"Ahmed Barakat","zipCode":"53123"},"firstName":"Ahmed","id":10002,"lastName":"Yassien2","phoneNum":"+201111176687"},{"address":{"city":"Er","state":"","street":"","zipCode":""},"firstName":"Zar","id":10003,"lastName":"Saadon","phoneNum":"+201000012515"}]}
+>>>>>>> branch 'master' of https://Mosaabk@github.com/Mosaabk/mum_ymd_libsys.git
